@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     private Animator _animator = default;
     private bool _canAttack = true;
+    private float _health = 100f;
 
     private void Awake()
     {
@@ -14,6 +15,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _health -= (int)damage;
     }
 
     void Update()
